@@ -1,4 +1,7 @@
 FROM node:7-alpine
 
-RUN apk add --update \
-    subversion
+RUN rm -rf /var/cache/apk/* && \
+    rm -rf /tmp/*
+
+RUN apk add update
+RUN apk add subversion
