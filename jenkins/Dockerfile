@@ -1,3 +1,3 @@
 FROM node:7-alpine
 
-RUN whoami
+RUN apk add subversion
