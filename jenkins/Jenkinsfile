@@ -1,11 +1,9 @@
 pipeline {
     agent any
     stages {
-        /* "Build" and "Test" stages omitted */
-
-        stage('Deploy - Staging') {
+        stage('Build') {
             steps {
-                echo "deploy - staging"
+                echo "build"
             }
         }
 
@@ -15,9 +13,10 @@ pipeline {
             }
         }
 
-        stage('Deploy - Production') {
+        stage('Deploy') {
             steps {
-                echo "deploy - production"
+                sh "echo 'Hello 123' >> index.txt"
+                sh "scp index.txt expertp@172.17.182.9:/home/expertp"
             }
         }
     }
