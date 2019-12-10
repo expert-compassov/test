@@ -7,16 +7,10 @@ pipeline {
             }
         }
 
-        stage('Sanity check') {
-            steps {
-                input "Does the staging environment look ok?"
-            }
-        }
-
         stage('Deploy') {
             steps {
                 sh "echo 'Hello 123' >> index.txt"
-                sh "scp index.txt expertp@172.17.182.9:/home/expertp"
+                sh "scp -v -o StrictHostKeyChecking=no index.txt expertp@172.17.182.9:/home/expertp"
             }
         }
     }
