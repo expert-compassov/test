@@ -5,7 +5,7 @@ pipeline {
 
         stage('Deploy - Staging') {
             steps {
-                sh 'echo "deploy - staging"'
+                echo "deploy - staging"
             }
         }
 
@@ -17,7 +17,7 @@ pipeline {
 
         stage('Deploy - Production') {
             steps {
-                sh 'echo "deploy - production"'
+                echo "deploy - production"
             }
         }
     }
